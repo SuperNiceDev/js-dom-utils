@@ -1,0 +1,6 @@
+export { cssClass } from './element-css-class'
+export { getPositionInDocument } from './element-document-position'
+export { getOuterHeight } from './element-outer-dimensions'
+export { getOuterWidth } from './element-outer-dimensions'
+export { getStyles } from './element-styles'
+export { setStyles } from './element-styles'
