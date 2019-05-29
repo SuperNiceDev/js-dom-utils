@@ -8,6 +8,7 @@ export function getStyles (elem)
   }
 }
 
+
 export function setStyles (elem, styles)
 {
   for (var property in styles)
