@@ -9,8 +9,5 @@ export function getPositionInDocument (elem)
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
     return {top: (rect.top + scrollTop), left: (rect.left + scrollLeft)}
   }
-  else
-  {
-    return 0
-  }
+  return 0
 }
