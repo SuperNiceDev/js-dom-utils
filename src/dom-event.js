@@ -1,27 +1,36 @@
-
-// export function createEvent (p_name = 'customEventName')
-// {
-//   const evt = window.document.createEvent('UIEvents')
-//   evt.initUIEvent(p_name, true, false, window, 0)
-//   return evt
-// }
+// - https://www.npmjs.com/package/custom-event-polyfill
+// import * as CustomEventPolyfillIE9+ from 'custom-event-polyfill'
+// const PreventTreeShaking = [CustomEventPolyfillIE9+]
 
 
-// dispatch native resize event
-// window.dispatchEvent(new CustomEvent('resize'))
-
-
-// window.addEventListener('CUSTOM_EVENT_NAME', this._onEventHandler, {passive: true, capture: true})
-
-// const customEvent = new CustomEvent('CUSTOM_EVENT_NAME', {key1: 'val1', key2: 'val2'})
-// customEvent.detail.key1 = 'val111'
-// window.dispatchEvent(customEvent)
-
-export function createEvent (name = 'EVENT_NAME_NOT_SET', detailObj = {})
+export function createEvent (name = 'CUSTOM_EVENT_NAME', detailObj = {})
 {
   /* eslint-disable-next-line */
   return new CustomEvent(name, {'detail': detailObj})
 }
+
+
+// window.addEventListener('CUSTOM_EVENT_NAME', this._onEvent, {passive: true, capture: true})
+
+// const customEvent = new createEvent('CUSTOM_EVENT_NAME', {key1: 'val1', key2: 'val2'})
+// customEvent.detail.key1 = 'val111'
+// window.dispatchEvent(customEvent)
+
+
+// - dispatch native resize event
+// window.dispatchEvent(new CustomEvent('resize'))
+
+
+
+// export function createEvent (name = 'CUSTOM_EVENT_NAME')
+// {
+//   const evt = window.document.createEvent('UIEvents')
+//   evt.initUIEvent(name, true, false, window, 0)
+//   return evt
+// }
+
+// const customEvent = createEvent('CUSTOM_EVENT_NAME', {key1: 'val1', key2: 'val2'})
+// window.dispatchEvent(customEvent)
 
 
 
@@ -32,6 +41,7 @@ export function addEvent (elem, type, handler, options = {passive: true, useCapt
   elem.addEventListener(type, handler, options)
   // if (elem.attachEvent) elem.attachEvent('on'+type, handler) else elem.addEventListener(type, handler)
 }
+
 
 
 export function removeEvent (elem, type, handler, options = {passive: true, useCapture: false})
