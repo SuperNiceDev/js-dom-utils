@@ -1,4 +1,4 @@
-export function getWindowHeight ()
+export function windowGetHeight ()
 {
   return window.innerHeight ||
    document.documentElement.clientHeight ||

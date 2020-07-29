@@ -1,6 +1,6 @@
 // https://j11y.io/snippets/get-document-height-cross-browser/
 
-export function getWindowScrollHeight ()
+export function windowGetScrollHeight ()
 {
   const body = document.body
   const docElem = document.documentElement
