@@ -12,5 +12,4 @@ export { windowSetScrollRestoration } from './window/window-scroll-restoration'
 export { windowGetScrollTop, windowSetScrollTop } from './window/window-scroll-top'
 
 export { createEvent, addEvent, removeEvent } from './dom-event'
-export { isTouch } from './is-touch'
 export { pxToRem } from './px-to-rem'
