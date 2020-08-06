@@ -11,5 +11,5 @@ export { windowGetScrollHeight } from './window/window-scroll-height'
 export { windowSetScrollRestoration } from './window/window-scroll-restoration'
 export { windowGetScrollTop, windowSetScrollTop } from './window/window-scroll-top'
 
-export { createEvent, addEvent, removeEvent } from './dom-event'
+export { createEvent, addEvent, removeEvent } from './event'
 export { pxToRem } from './px-to-rem'
