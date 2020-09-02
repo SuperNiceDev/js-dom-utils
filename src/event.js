@@ -5,7 +5,6 @@
 
 export function createEvent (name = 'CUSTOM_EVENT_NAME', detailObj = {})
 {
-  /* eslint-disable-next-line */
   return new CustomEvent(name, {'detail': detailObj})
 }
 
