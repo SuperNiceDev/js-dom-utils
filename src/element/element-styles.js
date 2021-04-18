@@ -22,3 +22,15 @@ export function setStyles (elem, styles)
     }
   }
 }
+
+
+export const removeStyles = (elem, styles) =>
+{
+  if (elem)
+  {
+    styles.forEach((item) => {
+      // elem.style[item] = null
+      elem.style.removeProperty(item)
+    });
+  }
+}

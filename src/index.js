@@ -2,7 +2,7 @@ export { cssClass } from './element/element-css-class'
 export { getPositionInDocument } from './element/element-get-document-position'
 export { getOuterWidth, getOuterHeight } from './element/element-get-outer-dimensions'
 export { selectElement, selectAllElements } from './element/element-select'
-export { getStyles, setStyles } from './element/element-styles'
+export { getStyles, setStyles, removeStyles } from './element/element-styles'
 
 export { windowGetElementYPosition } from './window/window-element-position'
 export { windowGetHeight } from './window/window-height'
