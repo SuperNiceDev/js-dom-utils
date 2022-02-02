@@ -19,4 +19,16 @@ export {
 } from "./window/window-scroll-top";
 
 export { createEvent, addEvent, removeEvent } from "./event";
+
+export {
+  scrollToTween,
+  scrollTo,
+  isTouch,
+  getWindowDimensions,
+  getScreenOrientation,
+  getPointerMode,
+  getResponsiveData,
+  resizeAndGetMediaQueries,
+} from "./helpers";
+
 export { pxToRem } from "./px-to-rem";
