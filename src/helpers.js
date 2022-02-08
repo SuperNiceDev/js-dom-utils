@@ -79,7 +79,8 @@ export const getPointerMode = () => {
 
 // const phoneW = 375;
 const phoneW = 425;
-const phoneBP = 560;
+// const phoneBP = 560;
+const phoneBP = 768;
 
 // const tabletW = 768
 // const tabletBP = 1024
