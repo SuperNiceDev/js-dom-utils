@@ -2,6 +2,7 @@
   "name": "js-dom-utils",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "./src/index.js",
   "dependencies": {
     "animated-scroll-to": "^2.0.12",
     "scroll-restoration-polyfill": "^0.6.1"
