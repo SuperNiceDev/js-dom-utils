@@ -64,18 +64,18 @@ export const getResponsiveData = (pWidth) => {
   const touch = isTouch();
   const cln = ` ${orientation} ${pointerMode}`;
 
-  if (pWidth <= phoneBP) {
-    return {
-      ...windowDimensions,
-      touch,
-      mobile: true,
-      phone: true,
-      // tablet: false,
-      desktop: false,
-      scale: pWidth / phoneW,
-      classNames: `phone${cln}`,
-    };
-  }
+  // if (pWidth <= phoneBP) {
+  return {
+    ...windowDimensions,
+    touch,
+    mobile: true,
+    phone: true,
+    // tablet: false,
+    desktop: false,
+    scale: pWidth / phoneW,
+    classNames: `phone${cln}`,
+  };
+  // }
   // else if (pWidth <= tabletBP)
   // {
   //   return {
@@ -89,18 +89,18 @@ export const getResponsiveData = (pWidth) => {
   //     classNames: `tablet${cln}`,
   //   }
   // }
-  else {
-    return {
-      ...windowDimensions,
-      touch,
-      mobile: false,
-      phone: false,
-      // tablet: false,
-      desktop: true,
-      scale: pWidth / desktopW,
-      classNames: `desktop${cln}`,
-    };
-  }
+  // else {
+  //   return {
+  //     ...windowDimensions,
+  //     touch,
+  //     mobile: false,
+  //     phone: false,
+  //     // tablet: false,
+  //     desktop: true,
+  //     scale: pWidth / desktopW,
+  //     classNames: `desktop${cln}`,
+  //   };
+  // }
 
   // --- Android viewport sizes ---
   //                                 W     H      H
