@@ -6,7 +6,7 @@ export {
   getScrolledYPositionInDocument,
   getPositionInDocument,
 } from "./element/element-get-document-position";
-export { getNextParenthHref } from "./element/element-get-next-parent-href";
+export { getNextParentHref } from "./element/element-get-next-parent-href";
 export {
   getOuterWidth,
   getOuterHeight,
