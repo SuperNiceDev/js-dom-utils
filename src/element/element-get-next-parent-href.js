@@ -1,4 +1,4 @@
-export const getNextParenthHref = (
+export const getNextParentHref = (
   elem,
   parentNodeCount = 0,
   maxParentNodeCount = 9
@@ -9,6 +9,6 @@ export const getNextParenthHref = (
   if (elem && elem.href) {
     return [elem, elem.href];
   } else if (elem) {
-    return getNextParenthHref(elem.parentNode, parentNodeCount + 1);
+    return getNextParentHref(elem.parentNode, parentNodeCount + 1);
   }
 };
