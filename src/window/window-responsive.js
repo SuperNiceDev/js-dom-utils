@@ -51,7 +51,7 @@ const phoneBP = 768;
 // const tabletW = 768
 // const tabletBP = 1024
 
-const desktopW = 1920;
+const desktopW = 1440;
 
 export const getResponsiveData = (pWidth) => {
   // log('getResponsiveData() pWidth:', pWidth)
