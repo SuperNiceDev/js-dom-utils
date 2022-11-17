@@ -1,6 +1,6 @@
 // https://plainjs.com/javascript/styles/get-the-position-of-an-element-relative-to-the-document-24/
 
-export function getYPositionInDocument(elem) {
+export function getPositionInDocument(elem) {
   if (elem) {
     const rect = elem.getBoundingClientRect();
     const scrollLeft =
@@ -11,8 +11,8 @@ export function getYPositionInDocument(elem) {
   return 0;
 }
 
-export function getPositionInDocument() {
-  return getYPositionInDocument;
+export function getYPositionInDocument(elem) {
+  return getPositionInDocument(elem)?.top || 0;
 }
 
 export function getScrolledYPositionInDocument(elem) {
