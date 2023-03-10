@@ -1,4 +1,4 @@
-const log = window.debug("log: DomUtils");
+// const log = window.debug("log: DomUtils");
 
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -51,8 +51,7 @@ const phoneBP = 560;
 // const tabletW = 768
 // const tabletBP = 1024
 
-// const desktopW = 1440;
-const desktopW = 1512;
+const desktopW = 1440;
 
 export const getResponsiveData = (pWidth) => {
   // log('getResponsiveData() pWidth:', pWidth)
@@ -133,8 +132,8 @@ export const getResponsiveData = (pWidth) => {
 
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-export const resizeAndGetMediaQueries = (windowWidth) => {
-  const App = document.querySelector(".App");
+export const resizeAndGetMediaQueries = (selector, windowWidth) => {
+  const App = document.querySelector(selector || ".App");
   const html = document.querySelector("html");
   let className = "";
   let scale = 1;
