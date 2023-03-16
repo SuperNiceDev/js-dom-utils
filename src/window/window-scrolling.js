@@ -27,9 +27,9 @@ export const scrollToTween = (elem, position = 0, speed = 1000) => {
 
 let scrollToTimeout = null;
 
-export const scrollTo = (bodyScrollTop = 0, duration = 0, delay = 0) => {
+export const scrollTo = (position = 0, duration = 0, delay = 0) => {
   clearTimeout(scrollToTimeout);
   scrollToTimeout = setTimeout(() => {
-    scrollToTween(window, bodyScrollTop, duration);
+    scrollToTween(window, position, duration);
   }, delay);
 };
