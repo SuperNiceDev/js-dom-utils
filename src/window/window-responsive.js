@@ -111,6 +111,7 @@ export const getResponsiveData = (pWidth) => {
   // iPhone SE 2nd Gen. iOS 14.5    375 x 553 || 628
   // iPhone 12 Pro      iOS 14.5    390 x 664 || 778
   // iPhone 12 Pro Max  iOS 14.5    425 x 746 || 860
+  // iPhone 14 Pro      iOS 16.2    393 x 660 || 741
   // iPad                          1024 x 768 || xxx
 
   //    Smartphone                                Tablet / Desktop
