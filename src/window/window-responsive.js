@@ -138,14 +138,14 @@ export const resizeAndGetMediaQueries = (selector, windowWidth) => {
   const html = document.querySelector("html");
   let className = "";
   let scale = 1;
-  // log('resizeAndGetMediaQueries() App:', App)
+  // console.log('resizeAndGetMediaQueries() App:', App)
 
   if (App) {
-    // const responsiveData = getResponsiveData(windowWidth)
     const responsiveData = getResponsiveData(App.offsetWidth);
+    // const responsiveData = getResponsiveData(windowWidth)
     // scale = responsiveData.scale;
     scale = Math.round(responsiveData.scale * 100) / 100;
-    // log("resizeAndGetMediaQueries() scale:", scale);
+    // console.log("resizeAndGetMediaQueries() scale:", scale);
     if (html) html.style.fontSize = `${scale * 100}%`;
     className = responsiveData.classNames;
   } else {
