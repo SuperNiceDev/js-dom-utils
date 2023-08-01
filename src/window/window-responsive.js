@@ -51,7 +51,8 @@ const phoneBP = 560;
 // const tabletW = 768
 // const tabletBP = 1024
 
-const desktopW = 1440;
+// const desktopW = 1440;
+const desktopW = 1200;
 
 export const getResponsiveData = (pWidth) => {
   // log('getResponsiveData() pWidth:', pWidth)
@@ -89,7 +90,8 @@ export const getResponsiveData = (pWidth) => {
   //     classNames: `tablet${cln}`,
   //   }
   // }
-  else {
+  else if (pWidth <= desktopW)
+  {
     return {
       ...windowDimensions,
       touch,
@@ -98,6 +100,18 @@ export const getResponsiveData = (pWidth) => {
       // tablet: false,
       desktop: true,
       scale: pWidth / desktopW,
+      classNames: `desktop${cln}`,
+    }
+  }
+  else {
+    return {
+      ...windowDimensions,
+      touch,
+      mobile: false,
+      phone: false,
+      // tablet: false,
+      desktop: true,
+      scale: 1,
       classNames: `desktop${cln}`,
     };
   }
