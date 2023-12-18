@@ -173,3 +173,16 @@ export const resizeAndGetMediaQueries = (selector, windowWidth) => {
 };
 
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+export const setWindowFontSize = (scale, selector) => {
+  const App = document.querySelector(selector || ".App");
+  const html = document.querySelector("html");
+
+  if (App) {
+    if (html) html.style.fontSize = `${scale * 100}%`;
+  } else {
+    if (html) html.style.fontSize = "100%";
+  }
+};
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
