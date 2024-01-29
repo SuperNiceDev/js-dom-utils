@@ -31,7 +31,7 @@ export function addEvent(
   elem,
   type,
   handler,
-  options = { passive: true, useCapture: false }
+  options = { passive: true, useCapture: false },
 ) {
   elem.addEventListener(type, handler, options);
   // if (elem.attachEvent) elem.attachEvent('on'+type, handler) else elem.addEventListener(type, handler)
@@ -41,7 +41,7 @@ export function removeEvent(
   elem,
   type,
   handler,
-  options = { passive: true, useCapture: false }
+  options = { passive: true, useCapture: false },
 ) {
   elem.removeEventListener(type, handler, options);
   // if (elem.detachEvent) elem.detachEvent('on'+type, handler) else elem.removeEventListener(type, handler)

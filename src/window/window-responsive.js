@@ -62,7 +62,7 @@ export const getResponsiveData = (pWidth) => {
   const windowDimensions = getWindowDimensions();
   const orientation = getWindowOrientation(
     windowDimensions.width,
-    windowDimensions.height
+    windowDimensions.height,
   );
   const pointerMode = getPointerMode();
   const touch = isTouch();
@@ -93,8 +93,7 @@ export const getResponsiveData = (pWidth) => {
   //     classNames: `tablet${cln}`,
   //   }
   // }
-  else if (pWidth <= desktopW)
-  {
+  else if (pWidth <= desktopW) {
     return {
       ...windowDimensions,
       touch,
@@ -102,11 +101,10 @@ export const getResponsiveData = (pWidth) => {
       phone: false,
       // tablet: false,
       desktop: true,
-      scale: pWidth / desktopW * maxScale,
+      scale: (pWidth / desktopW) * maxScale,
       classNames: `desktop${cln}`,
-    }
-  }
-  else {
+    };
+  } else {
     return {
       ...windowDimensions,
       touch,

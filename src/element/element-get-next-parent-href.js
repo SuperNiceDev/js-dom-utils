@@ -1,7 +1,7 @@
 export const getNextParentHref = (
   elem,
   parentNodeCount = 0,
-  maxParentNodeCount = 9
+  maxParentNodeCount = 9,
 ) => {
   if (!elem) return [null, ""];
   if (parentNodeCount > maxParentNodeCount) return [elem, ""];
