@@ -52,13 +52,17 @@ const phoneBP = 560;
 // const tabletBP = 1024
 
 const desktopW = 1440;
+// const desktopW = 1152;
+
+// const maxScale = 1;
+const maxScale = 0.8;
 
 export const getResponsiveData = (pWidth) => {
   // log('getResponsiveData() pWidth:', pWidth)
   const windowDimensions = getWindowDimensions();
   const orientation = getWindowOrientation(
     windowDimensions.width,
-    windowDimensions.height
+    windowDimensions.height,
   );
   const pointerMode = getPointerMode();
   const touch = isTouch();
@@ -89,7 +93,7 @@ export const getResponsiveData = (pWidth) => {
   //     classNames: `tablet${cln}`,
   //   }
   // }
-  else {
+  else if (pWidth <= desktopW) {
     return {
       ...windowDimensions,
       touch,
@@ -97,7 +101,18 @@ export const getResponsiveData = (pWidth) => {
       phone: false,
       // tablet: false,
       desktop: true,
-      scale: pWidth / desktopW,
+      scale: (pWidth / desktopW) * maxScale,
+      classNames: `desktop${cln}`,
+    };
+  } else {
+    return {
+      ...windowDimensions,
+      touch,
+      mobile: false,
+      phone: false,
+      // tablet: false,
+      desktop: true,
+      scale: maxScale,
       classNames: `desktop${cln}`,
     };
   }
@@ -133,7 +148,7 @@ export const getResponsiveData = (pWidth) => {
 
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-export const resizeAndGetMediaQueries = (selector, windowWidth) => {
+export const resizeAndGetMediaQueries = (selector) => {
   const App = document.querySelector(selector || ".App");
   const html = document.querySelector("html");
   let className = "";
@@ -142,7 +157,6 @@ export const resizeAndGetMediaQueries = (selector, windowWidth) => {
 
   if (App) {
     const responsiveData = getResponsiveData(App.offsetWidth);
-    // const responsiveData = getResponsiveData(windowWidth)
     // scale = responsiveData.scale;
     scale = Math.round(responsiveData.scale * 100) / 100;
     // console.log("resizeAndGetMediaQueries() scale:", scale);
@@ -153,6 +167,19 @@ export const resizeAndGetMediaQueries = (selector, windowWidth) => {
   }
 
   return { className, scale };
+};
+
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+export const setWindowFontSize = (scale, selector) => {
+  const App = document.querySelector(selector || ".App");
+  const html = document.querySelector("html");
+
+  if (App) {
+    if (html) html.style.fontSize = `${scale * 100}%`;
+  } else {
+    if (html) html.style.fontSize = "100%";
+  }
 };
 
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
