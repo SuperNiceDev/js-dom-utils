@@ -149,7 +149,7 @@ export const getResponsiveData = (pWidth) => {
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 export const resizeAndGetMediaQueries = (selector, windowWidth) => {
-  const App = document.querySelector(selector || ".App");
+  const App = document.querySelector(selector || "#appRoot");
   const html = document.querySelector("html");
   let className = "";
   let scale = 1;
@@ -173,7 +173,7 @@ export const resizeAndGetMediaQueries = (selector, windowWidth) => {
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 export const setWindowFontSize = (scale, selector) => {
-  const App = document.querySelector(selector || ".App");
+  const App = document.querySelector(selector || "#appRoot");
   const html = document.querySelector("html");
 
   if (App) {
