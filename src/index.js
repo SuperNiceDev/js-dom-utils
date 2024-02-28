@@ -24,6 +24,7 @@ export {
   getPointerMode,
   getResponsiveData,
   resizeAndGetMediaQueries,
+  setWindowFontSize,
 } from "./window/window-responsive";
 export { pxToRem } from "./window/window-px-to-rem";
 export { windowIsTouch } from "./window/window-is-touch";
