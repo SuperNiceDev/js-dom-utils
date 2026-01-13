@@ -54,8 +54,7 @@ const phoneBP = 560;
 const desktopW = 1440;
 // const desktopW = 1152;
 
-// const maxScale = 1;
-const maxScale = 0.8;
+const maxScale = 1;
 
 export const getResponsiveData = (pWidth) => {
   // log('getResponsiveData() pWidth:', pWidth)
@@ -130,7 +129,7 @@ export const getResponsiveData = (pWidth) => {
   // iPad                          1024 x 768 || xxx
 
   //    Smartphone                                Tablet / Desktop
-  //   Layout 375px         Breakpoint 560px        Layout 1440px       Breakpoint 1920px
+  //   Layout 425px         Breakpoint 560px        Layout 1440px       Breakpoint 1920px
   // --------|---------------------|---------------------|---------------------|-------------
   //        100%                                        100%                  133%
   //                 scale up            scale down              scale up              scale up
@@ -138,7 +137,7 @@ export const getResponsiveData = (pWidth) => {
   //                                                                                 center content
 
   //    Smartphone                                     Tablet                                     Desktop
-  //   Layout 375px         Breakpoint 560px        Layout 1024px       Breakpoint 1200px       Layout 1440px        Breakpoint 2560px
+  //   Layout 425px         Breakpoint 560px        Layout 1024px       Breakpoint 1200px       Layout 1440px        Breakpoint 2560px
   // --------|---------------------|---------------------|---------------------|---------------------|---------------------|-------------
   //        100%                                        100%                                        100%                  177%
   //                 scale up            scale down              scale up           scale down              scale up                scale up
@@ -149,21 +148,18 @@ export const getResponsiveData = (pWidth) => {
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 export const resizeAndGetMediaQueries = (selector) => {
-  const App = document.querySelector(selector || ".App");
-  const html = document.querySelector("html");
+  const App = document.querySelector(selector || ".AppRootLayout");
   let className = "";
   let scale = 1;
   // console.log('resizeAndGetMediaQueries() App:', App)
 
   if (App) {
     const responsiveData = getResponsiveData(App.offsetWidth);
-    // scale = responsiveData.scale;
     scale = Math.round(responsiveData.scale * 100) / 100;
-    // console.log("resizeAndGetMediaQueries() scale:", scale);
-    if (html) html.style.fontSize = `${scale * 100}%`;
+    // if (html) html.style.fontSize = `${scale * 100}%`;
     className = responsiveData.classNames;
   } else {
-    if (html) html.style.fontSize = "100%";
+    // if (html) html.style.fontSize = "100%";
   }
 
   return { className, scale };
@@ -172,7 +168,7 @@ export const resizeAndGetMediaQueries = (selector) => {
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 export const setWindowFontSize = (scale, selector) => {
-  const App = document.querySelector(selector || ".App");
+  const App = document.querySelector(selector || ".AppRootLayout");
   const html = document.querySelector("html");
 
   if (App) {
