@@ -11,6 +11,18 @@ export function getPositionInDocument(elem) {
   return 0;
 }
 
+export function getPositionInParentElement(elem, parentElem) {
+  if (elem && parentElem) {
+    const elemRect = elem.getBoundingClientRect();
+    const parentRect = parentElem.getBoundingClientRect();
+    return {
+      top: elemRect.top - parentRect.top,
+      left: elemRect.left - parentRect.left,
+    };
+  }
+  return 0;
+}
+
 export function getYPositionInDocument(elem) {
   return getPositionInDocument(elem)?.top || 0;
 }
